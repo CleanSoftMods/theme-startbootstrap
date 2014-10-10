@@ -11,54 +11,36 @@
 
 @if(Auth::check() === false && !in_array(Request::url(), [URL::route('pxcms.user.login'), URL::route('pxcms.user.register')]))
 <div id="login" class="modal fade">
-<div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h4>Existing Members Login</h4>
-        </div>
-        <div class="modal-body">
-            @if (Session::has('login_errors'))
-                <span class="error">Username or password incorrect.</span>
-            @endif
-
-            <div class="form">
-                {{ Former::horizontal_open()->action(URL::route('pxcms.user.login')) }}
-                    <div class="form-group">
-                        <label class="control-label col-md-3" for="username">Username</label>
-                        <div class="col-md-9">
-                            <input type="text" class="form-control" id="username">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-3" for="email">Password</label>
-                        <div class="col-md-9">
-                            <input type="password" class="form-control" id="password">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-9 col-md-offset-3">
-                            <div class="checkbox inline">
-                                <label>
-                                    <input type="checkbox" id="inlineCheckbox1" value="agree"> Remember Me
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-9 col-md-offset-3">
-                            <button type="submit" class="btn btn-success">Login</button>
-                            <button type="reset" class="btn btn-default">Reset</button>
-                        </div>
-                    </div>
-                {{ Form::token() , Former::close() }}
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4>Existing Members Login</h4>
             </div>
-        </div>
-        <div class="modal-footer">
-            <p>Dont have account? {{ HTML::link( URL::route('pxcms.user.register'), 'Register') }} here.</p>
+            <div class="modal-body">
+                {{ Theme::partial('core.login') }}
+            </div>
+            <div class="modal-footer">
+                <p>Dont have account? {{ HTML::link( URL::route('pxcms.user.register'), 'Register') }} here.</p>
+            </div>
         </div>
     </div>
 </div>
+
+<div id="register" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4>Register</h4>
+            </div>
+            <div class="modal-body">
+                {{ Theme::partial('core.register') }}
+            </div>
+            <div class="modal-footer">
+                <p>Already have account? {{ HTML::link( URL::route('pxcms.user.login'), 'Login') }}  here.</p>
+            </div>
+        </div>
+    </div>
 </div>
 @endif
