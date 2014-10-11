@@ -2,7 +2,7 @@
 {{ Former::horizontal_open()->action(URL::route('pxcms.user.login')) }}
 
     {{ Former::text('email', 'Username OR Email')->required() }}
-    {{ Former::text('password', 'Password')->required() }}
+    {{ Former::password('password', 'Password')->required() }}
 
     <div class="form-group">
         <div class="col-md-9 col-md-offset-3">
