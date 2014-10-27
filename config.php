@@ -32,19 +32,7 @@ return array(
 
         },
 
-        'beforeRenderTheme' => function ($theme) {
-            // You may use this event to set up your assets.
-            $theme->asset()->add('bootstrap',                   'assets/css/bootstrap.css');
-            $theme->asset()->add('font-awesome',                'assets/css/font-awesome.css');
-            $theme->asset()->usePath()->add('base',             'css/styles.css', array('bootstrap'));
-        },
-
-        'beforeRenderLayout' => array(
-            'default' => function ($theme) {
-                $theme->asset()->add('js',                      'assets/js.js');
-                $theme->asset()->usePath()->add('app.js',       'js/app/application.js', array('js'));
-                $theme->asset()->usePath()->add('modernizr',    'js/modernizr.js');
-            }
-        )
+        'asset' => function ($theme) {
+        }
     )
 );
