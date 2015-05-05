@@ -29,21 +29,10 @@ return array(
                 @endforeach
                 </ol>
             ');
-
-            if (($analyticsCode = Config::get('core::app.google-analytics', null)) !== null) {
-                $theme->asset()->container('footer')->writeScript('google-analytics', '
-                    (function (i,s,o,g,r,a,m) {i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function () {
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                    })(window,document,\'script\',\'//www.google-analytics.com/analytics.js\',\'ga\');
-
-                    ga(\'create\', \''.$analyticsCode.'\', \'auto\');
-                    ga(\'send\', \'pageview\');
-                ', ['dependencies.js']);
-            }
         },
-
-        'asset' => function ($theme) {
+        'beforeRenderTheme' => function ($theme) {
+            $theme->asset()->add('css', 'css/app.css');
+            $theme->asset()->container('footer')->add('js', 'js/all.js');
         }
     )
 );
