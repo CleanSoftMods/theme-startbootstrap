@@ -21,4 +21,6 @@ elixir(function(mix) {
         'assets/vendor/jquery/dist/jquery.js',
         'assets/vendor/bootstrap/dist/js/bootstrap.js'
     ], null, 'resources');
+    mix.copy('resources/assets/vendor/font-awesome/fonts', '../../public/fonts');
+    mix.copy('resources/assets/vendor/bootstrap/fonts', '../../public/fonts');
 });
