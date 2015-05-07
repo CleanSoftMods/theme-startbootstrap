@@ -12,15 +12,16 @@ var elixir = require('laravel-elixir');
  */
 
 elixir.config.publicDir = '../../public';
-elixir.config.cssOutput = '../../public/css';
-elixir.config.jsOutput = '../../public/js';
+elixir.config.cssOutput = 'assets/css';
+elixir.config.jsOutput = 'assets/js';
 
 elixir(function(mix) {
     mix.less('app.less');
     mix.scripts([
         'assets/vendor/jquery/dist/jquery.js',
-        'assets/vendor/bootstrap/dist/js/bootstrap.js'
+        'assets/vendor/bootstrap/dist/js/bootstrap.js',
+        'assets/js/application.js'
     ], null, 'resources');
-    mix.copy('resources/assets/vendor/font-awesome/fonts', '../../public/fonts');
-    mix.copy('resources/assets/vendor/bootstrap/fonts', '../../public/fonts');
+    mix.copy('resources/assets/vendor/font-awesome/fonts', 'assets/fonts');
+    mix.copy('resources/assets/vendor/bootstrap/fonts', 'assets/fonts');
 });
