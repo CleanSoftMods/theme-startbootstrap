@@ -1,14 +1,7 @@
 <?php
 
 return array(
-    // theme info
-    'name'    => 'default',
-    'author'  => 'Dan Aldridge',
-    'site'    => 'http://cysha.co.uk',
-    'type'    => 'frontend',
-    'version' => '1.0',
-
-    // theme options
+    'name' => 'default',
     'inherit' => null, //default
 
     'events' => array(
@@ -31,8 +24,8 @@ return array(
             ');
         },
         'beforeRenderTheme' => function ($theme) {
-            $theme->asset()->add('css', 'css/app.css');
-            $theme->asset()->container('footer')->add('js', 'js/all.js');
+            $theme->asset()->add('css', 'themes/default/css/app.css');
+            $theme->asset()->container('footer')->add('js', 'themes/default/js/all.js');
         }
     )
 );
