@@ -1,4 +1,17 @@
+var gulp = require('gulp');
+var shell = require('gulp-shell');
 var elixir = require('laravel-elixir');
+var themeInfo = require('./theme.json');
+
+elixir.extend('themePublish', function() {
+    gulp.task('themePublish', function() {
+        gulp.src('').pipe(shell('php ../../artisan theme:publish '+themeInfo.name));
+    });
+
+    this.registerWatcher('themePublish', '**/*.less');
+
+    return this.queueTask('themePublish');
+});
 
 /*
  |--------------------------------------------------------------------------
@@ -24,4 +37,5 @@ elixir(function(mix) {
     ], null, 'resources');
     mix.copy('resources/assets/vendor/font-awesome/fonts', 'assets/fonts');
     mix.copy('resources/assets/vendor/bootstrap/fonts', 'assets/fonts');
+    mix.themePublish();
 });
