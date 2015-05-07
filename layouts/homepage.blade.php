@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('theme.default::layouts.default')
 
 @section('layout-content')
     {!! Theme::partial('theme.msgs') !!}
