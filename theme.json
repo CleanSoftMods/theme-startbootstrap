@@ -2,6 +2,6 @@
     "name": "default",
     "description": "Default Bootstrap Theme for Phoenix CMS",
     "site": "http://cysha.co.uk",
-    "type": "backend",
+    "type": "frontend",
     "version": "1.0"
 }

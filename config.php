@@ -8,7 +8,7 @@ return array(
 
         'before' => function ($theme) {
             // You can remove this line anytime.
-            $theme->setTitle('Default Theme');
+            $theme->setTitle(config('app.site-name'));
 
             // Breadcrumb template.
             $theme->breadcrumb()->setTemplate('

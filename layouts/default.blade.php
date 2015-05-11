@@ -6,7 +6,7 @@
 {!! Theme::partial('theme.header') !!}
 
 <div class="site-container">
-    {!! Theme::partial('theme.content') !!}
+    @yield('layout-content')
 </div>
 
 {!! Theme::partial('theme.footer') !!}

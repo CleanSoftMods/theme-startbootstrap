@@ -3,8 +3,11 @@
 @section('layout-content')
 
 <section class="two-column-right">
-    <main class="content">
+    <div class="container">
         {!! Theme::breadcrumb()->render() !!}
+    </div>
+
+    <main class="content">
         {!! Theme::partial('theme.msgs') !!}
         {!! Theme::partial('theme.heading') !!}
         {!! Theme::partial('theme.content') !!}
