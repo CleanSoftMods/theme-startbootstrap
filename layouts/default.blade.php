@@ -16,7 +16,7 @@
 {!! Theme::asset()->container('footer')->scripts() !!}
 @yield('scripts')
 
-@if(App::environment() == 'production' && ($ga = config('core::app.google-analytics', null)) !== null)
+@if(App::environment() == 'production' && ($ga = config('cms.core.app.google-analytics', null)) !== null)
 <script>
     <!-- Google Analytics -->
     (function (i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function () {
