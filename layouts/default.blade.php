@@ -5,9 +5,7 @@
 
 {!! Theme::partial('theme.header') !!}
 
-<div class="site-container">
-    @yield('layout-content')
-</div>
+@yield('layout-content')
 
 {!! Theme::partial('theme.footer') !!}
 
