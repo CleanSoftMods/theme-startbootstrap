@@ -11528,7 +11528,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 jQuery( document ).ready(function(){
-    //jQuery('.modal').modal();
+    jQuery.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
 });
 
 //# sourceMappingURL=all.js.map
