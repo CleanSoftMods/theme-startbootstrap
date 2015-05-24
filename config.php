@@ -1,18 +1,18 @@
 <?php
 
-return array(
+return [
     'name' => 'default',
     'inherit' => null, //default
 
-    'events' => array(
+    'events' => [
 
         'before' => function ($theme) {
             // You can remove this line anytime.
             $theme->setTitle(config('cms.core.app.site-name'));
 
             // Breadcrumb template.
-            $theme->breadcrumb()->setTemplate('
-                <ol class="breadcrumb">
+            $theme->breadcrumb()->setTemplate(
+                '<ol class="breadcrumb">
                 @foreach ($crumbs as $i => $crumb)
                     @if ($i != (count($crumbs) - 1))
                     <li><a href="{{ $crumb["url"] }}">{{ $crumb["label"] }}</a></li>
@@ -20,12 +20,18 @@ return array(
                     <li class="active">{{ $crumb["label"] }}</li>
                     @endif
                 @endforeach
-                </ol>
-            ');
+                </ol>'
+            );
         },
+
+        'asset' => function ($theme) {
+            $themeName = config('cms.core.app.themes.frontend');
+            $theme->add('css', 'themes/'.$themeName.'/css/app.css');
+            $theme->container('footer')->add('js', 'themes/'.$themeName.'/js/all.js');
+        },
+
         'beforeRenderTheme' => function ($theme) {
-            $theme->asset()->add('css', 'themes/default/css/app.css');
-            $theme->asset()->container('footer')->add('js', 'themes/default/js/all.js');
+
         }
-    )
-);
+    ]
+];
