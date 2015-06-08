@@ -27,7 +27,7 @@ return [
         'asset' => function ($theme) {
             $themeName = config('cms.core.app.themes.frontend');
             $theme->add('css', 'themes/'.$themeName.'/css/app.css');
-            $theme->container('footer')->add('js', 'themes/'.$themeName.'/js/all.js');
+            $theme->add('js', 'themes/'.$themeName.'/js/all.js');
         },
 
         'beforeRenderTheme' => function ($theme) {
