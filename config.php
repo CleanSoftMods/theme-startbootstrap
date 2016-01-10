@@ -32,6 +32,21 @@ return [
 
         'beforeRenderTheme' => function ($theme) {
 
+            Menu::handler('frontend_user_controlpanel')
+                ->addClass('list-group no-style')
+                ->getItemsByContentType('Menu\Items\Contents\Link')
+                ->map(function ($item) {
+
+                    $class = 'list-group-item';
+                    if ($item->isActive()) {
+                        $class .= ' active';
+                    }
+
+                    $item
+                        ->setElement(null)
+                        ->getContent()
+                        ->addClass($class);
+                });
         }
     ]
 ];
