@@ -12,7 +12,8 @@ elixir(function(mix) {
         'assets/vendor/jquery/dist/jquery.js',
         'assets/vendor/bootstrap/dist/js/bootstrap.js',
         '../../../resources/assets/js/init.js'
-    ], null, 'resources');
+    ], null, 'assets/css/app.js')
+        .exec('php ../../artisan theme:publish ' + themeInfo.name+ ' --force', '**/*.js');
 
     // copy the fonts over
     mix.copy('resources/assets/vendor/font-awesome/fonts', 'assets/fonts')
