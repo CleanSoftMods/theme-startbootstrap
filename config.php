@@ -31,22 +31,11 @@ return [
         },
 
         'beforeRenderTheme' => function ($theme) {
+            $navService = (new \Cms\Modules\Core\Services\NavigationService());
 
-            Menu::handler('frontend_user_controlpanel')
-                ->addClass('list-group no-style')
-                ->getItemsByContentType('Menu\Items\Contents\Link')
-                ->map(function ($item) {
+            // grab the navigations
+            $navService->boot();
 
-                    $class = 'list-group-item';
-                    if ($item->isActive()) {
-                        $class .= ' active';
-                    }
-
-                    $item
-                        ->setElement(null)
-                        ->getContent()
-                        ->addClass($class);
-                });
-        }
-    ]
+        },
+    ],
 ];
