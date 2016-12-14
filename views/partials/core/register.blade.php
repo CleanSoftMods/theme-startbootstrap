@@ -1,5 +1,5 @@
 <div class="form">
-{!! Former::horizontal_open()->action( URL::route('pxcms.user.register') ) !!}
+{!! Former::horizontal_open()->action( route('pxcms.user.register') ) !!}
     {!! Former::text('username')->required() !!}
     {!! Former::email('email')->required() !!}
     {!! Former::password('password')->required() !!}

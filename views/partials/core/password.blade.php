@@ -1,5 +1,5 @@
 <div class="form">
-{!! Former::horizontal_open()->action( URL::route('pxcms.user.forgotpassword') ) !!}
+{!! Former::horizontal_open()->action( route('pxcms.user.forgotpassword') ) !!}
 
     {!! Former::email('email')->required() !!}
 

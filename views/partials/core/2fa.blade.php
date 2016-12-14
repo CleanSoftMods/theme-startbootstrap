@@ -2,7 +2,7 @@
 {!! Former::horizontal_open()->action(route('pxcms.user.2fa')) !!}
 
     <div class="page-header">
-        <h2>{{ config('cms.core.app.site-name') }} Login</h2>
+        <h2>{{ config('app.name') }} Login</h2>
     </div>
 
     <div class="panel panel-default">

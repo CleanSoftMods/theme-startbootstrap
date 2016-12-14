@@ -4,10 +4,6 @@
 
 <div class="site-container">
     <section class="two-column-right">
-        <div class="container">
-            {!! Theme::breadcrumb()->render() !!}
-        </div>
-
         <main class="content">
             {!! Theme::partial('theme.msgs') !!}
             {!! Theme::partial('theme.heading') !!}
