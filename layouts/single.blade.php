@@ -2,8 +2,8 @@
 
 @section('layout-content')
 
-<div class="site-container">
+  <div class="site-container">
     {!! Theme::partial('theme.content') !!}
-</div>
+  </div>
 
 @stop

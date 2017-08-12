@@ -1,14 +1,14 @@
 @if (count($menus))
-    @set($menuSet, Theme::getSidebar())
+  @set($menuSet, Theme::getSidebar())
 
-    @if (isset($menus[$menuSet]) && !empty($menus[$menuSet]))
-        @foreach($menus[$menuSet] as $menu)
+  @if (isset($menus[$menuSet]) && !empty($menus[$menuSet]))
+    @foreach($menus[$menuSet] as $menu)
 
-            @set($render, array_get($menu, 'render_in', '_panel'))
-            @set($view, 'sidebar-items.'.$render)
+      @set($render, array_get($menu, 'render_in', '_panel'))
+      @set($view, 'sidebar-items.'.$render)
 
-            {!! Theme::partial($view, compact('menu')) !!}
+      {!! Theme::partial($view, compact('menu')) !!}
 
-        @endforeach
-    @endif
+    @endforeach
+  @endif
 @endif
